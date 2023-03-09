@@ -32,11 +32,11 @@ public class Application {
 	    List<String> nomeDasPessoas = new ArrayList<String>();
 	    double valor = 0;
 
-	    System.out.print(bold("***CADASTRO DAS PESSOAS A FAZEREM PARTE DO RACHID***\n\n"));
+	    System.out.print("***CADASTRO DAS PESSOAS A FAZEREM PARTE DO RACHID***\n\n");
 
 	    while (true)
 		{
-		    System.out.print(bold("Entre com o nome das pessoas que vão fazer o rachid [até 5 letras]: "));
+		    System.out.print("Entre com o nome das pessoas que vão fazer o rachid [até 5 letras]: ");
 
 		    nomePessoa = sc.nextLine();
 
@@ -47,12 +47,12 @@ public class Application {
 
 		    if (nomePessoa.length() > 5)
 			{
-			    System.out.print(bold("Atenção, nome da pessoa com mais de 5 letras!\n"));
+			    System.out.print("Atenção, nome da pessoa com mais de 5 letras!\n");
 
 			} else if (listaPessoas.containsKey(nomePessoa))
 			{
 
-			    System.out.print(bold("Atenção, você ja informou o nome desta pessoa!\n"));
+			    System.out.print("Atenção, você ja informou o nome desta pessoa!\n");
 
 			} else
 			{
@@ -72,12 +72,12 @@ public class Application {
 		    listaPessoas.get(key).inicializaMap(nomeDasPessoas);
 		}
 
-	    System.out.print(bold("\n\n***CADASTRO DE PAGAMENTOS***\n\n"));
+	    System.out.print("\n\n***CADASTRO DE PAGAMENTOS***\n\n");
 
 	    while (true)
 		{
 
-		    System.out.print(bold("Entre quem pagou " + tokenPessoas + " [case sensitive] : "));
+		    System.out.print("Entre quem pagou " + tokenPessoas + " [case sensitive] : ");
 
 		    nomePessoa = sc.nextLine();
 
@@ -87,11 +87,11 @@ public class Application {
 			}
 		    if (listaPessoas.get(nomePessoa) != null)
 			{
-			    System.out.print(bold("Entre com a descrição do pagamento: "));
+			    System.out.print("Entre com a descrição do pagamento: ");
 
 			    descricao = sc.nextLine();
 
-			    System.out.print(bold("Entre com o valor do pagamento: "));
+			    System.out.print("Entre com o valor do pagamento: ");
 
 			    valor = sc.nextDouble();
 
@@ -101,7 +101,7 @@ public class Application {
 
 			} else
 			{
-			    System.out.print(bold("Atenção, você não informou este nome no cadastro de pessoas!\n"));
+			    System.out.print("Atenção, você não informou este nome no cadastro de pessoas!\n");
 
 			}
 
@@ -199,10 +199,4 @@ public class Application {
 	    System.out.println("\nPROGRAMA FINALIZADO\n");
 
 	}
-
-    public static String bold(String str)
-	{
-	    return SET_BOLD_TEXT + str + SET_PLAIN_TEXT;
-	}
-
 }
