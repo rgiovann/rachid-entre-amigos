@@ -32,6 +32,8 @@ public class Application {
 	    List<String> nomeDasPessoas = new ArrayList<String>();
 	    double valor = 0;
 
+	    System.out.print("*** SISTEMA RACHID Para finalizar os cadastros digite END ou tecla <ENTER> ***\n\n");
+
 	    System.out.print("***CADASTRO DAS PESSOAS A FAZEREM PARTE DO RACHID***\n\n");
 
 	    while (true)
@@ -54,7 +56,7 @@ public class Application {
 
 			    System.out.print("Atenção, você ja informou o nome desta pessoa!\n");
 
-			} else
+			} else if (!nomePessoa.isBlank())
 			{
 			    listaPessoas.put(nomePessoa, new Pessoa(nomePessoa));
 			    nomeDasPessoas.add(nomePessoa);
@@ -72,39 +74,43 @@ public class Application {
 		    listaPessoas.get(key).inicializaMap(nomeDasPessoas);
 		}
 
-	    System.out.print("\n\n***CADASTRO DE PAGAMENTOS***\n\n");
+	    if (!listaPessoas.isEmpty())
 
-	    while (true)
 		{
+		    System.out.print("\n\n***CADASTRO DE PAGAMENTOS***\n\n");
 
-		    System.out.print("Entre quem pagou " + tokenPessoas + " [case sensitive] : ");
-
-		    nomePessoa = sc.nextLine();
-
-		    if (nomePessoa.equals("END") || nomePessoa.isBlank())
+		    while (true)
 			{
-			    break;
+
+			    System.out.print("Entre quem pagou " + tokenPessoas + " *case sensitive* ] : ");
+
+			    nomePessoa = sc.nextLine();
+
+			    if (nomePessoa.equals("END") || nomePessoa.isBlank())
+				{
+				    break;
+				}
+			    if (listaPessoas.get(nomePessoa) != null)
+				{
+				    System.out.print("Entre com a descrição do pagamento: ");
+
+				    descricao = sc.nextLine();
+
+				    System.out.print("Entre com o valor do pagamento: ");
+
+				    valor = sc.nextDouble();
+
+				    sc.nextLine();
+
+				    listaPagamentos.add(new Pagamento(valor, descricao, nomePessoa));
+
+				} else
+				{
+				    System.out.print("Atenção, você não informou este nome no cadastro de pessoas!\n");
+
+				}
+
 			}
-		    if (listaPessoas.get(nomePessoa) != null)
-			{
-			    System.out.print("Entre com a descrição do pagamento: ");
-
-			    descricao = sc.nextLine();
-
-			    System.out.print("Entre com o valor do pagamento: ");
-
-			    valor = sc.nextDouble();
-
-			    sc.nextLine();
-
-			    listaPagamentos.add(new Pagamento(valor, descricao, nomePessoa));
-
-			} else
-			{
-			    System.out.print("Atenção, você não informou este nome no cadastro de pessoas!\n");
-
-			}
-
 		}
 
 	    sc.close();
@@ -132,7 +138,7 @@ public class Application {
 
 			}
 
-		    System.out.print("\n***LISTA DE PAGAMENTOS***\n\n");
+		    System.out.print("\n***LISTA DE PAGAMENTOS EFETUADO***\n\n");
 		    for (Pagamento pgto : listaPagamentos)
 			{
 			    System.out.println(pgto);
@@ -186,7 +192,7 @@ public class Application {
 							    -1 * valorConsolidado);
 						} else
 						{
-						    System.out.printf(p + " e " + key + " estão quites");
+						    System.out.printf(p + " e " + key + " estão quites\n");
 						}
 
 					}
