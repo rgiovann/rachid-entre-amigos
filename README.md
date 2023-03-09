@@ -26,4 +26,9 @@
 
 #### Abaixo segue um print screen do programa exibindo o mesmo resultado. Este programa não tem a função de calcular o valor da contas de amigos tomando uma cerveja no bar pois o pagamento é único. É mais apropriado para um cenário onde um grupo de pessoas (socios de uma empresa, irmãos) realizam pagamentos independentes e no final equalizam os valores a receber e a pagar de forma que todos paguem o mesmo valor.
 
-#### O programa calcula os valores para qualquer número de pessoas maiores ou iguais a 2. Para encerrar o número de pessoas a fazer o rachid digite END ou <ENTER>, mesma coisa para os pagamentos
+#### O programa calcula os valores para qualquer número de pessoas maiores ou iguais a 2. Para encerrar o número de pessoas a fazer o rachid digite END ou <ENTER>, mesma coisa para os pagamentos.
+
+#### Para executar o programa execute o comando:
+```sh
+java -jar rachid_v1.jar
+```
