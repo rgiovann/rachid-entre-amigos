@@ -1,4 +1,4 @@
-# RACHID ENTRE AMIGOS
+<h3>RACHID ENTRE AMIGOS</h3>
 
 #### Este programa feito em Java calcula os valores que devem ser pagos entre amigos em uma situação que os pagamentos não são realizados pela mesma pessoa. Mas a soma de todos os pagamentos devem ser rachados entre partes iguais.
 
